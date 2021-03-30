@@ -1,0 +1,53 @@
+{
+  "website" : {
+    "name": "GameBot!",
+    "avatar": "https://images.discordapp.net/avatars/785573425253974066/6b3cbd0f94e7c42368d9369271acd3a9.png?size=128",
+    "invite": "https://discord.com/oauth2/authorize?client_id=785573425253974066&permissions=4294967287&scope=bot"
+  },
+
+  "commands" : {
+    "basic": [{
+      "name": "help",
+      "category": "basic",
+      "description": "Add the code on website with the help of this command.",
+      "permissions": ["MANAGE_GUILD"],
+      "aliases": ["h"],
+      "usage": "?help <cmd>"
+    }, {
+      "name": "kill",
+      "category": "basic",
+      "description": "Add the code on website with the help of this command.",
+      "permissions": ["MANAGE_GUILD", "MANAGE_MESSAGES", "BAN_NERD"],
+      "aliases": [],
+      "usage": "?kill silent"
+    }, {
+      "name": "emoji_pp",
+      "category": "basic",
+      "description": "Add the code on website with the help of this command.",
+      "permissions": ["MANAGE_GUILD", "MANAGE_MESSAGES", "MANAGE_PP"],
+      "aliases": ["pp", "epp"],
+      "usage": "?emoji_pp <hard/soft/no_pp>"
+    }],
+    "moderation": [{
+      "name": "ban",
+      "category": "basic",
+      "description": "Add the code on website with the help of this command.",
+      "permissions": ["MANAGE_GUILD"],
+      "aliases": ["ac", "addc"],
+      "usage": "?ban <@mention> <reason>"
+    }, {
+      "name": "kick",
+      "category": "basic",
+      "description": "Add the code on website with the help of this command.",
+      "permissions": ["ADMIN"],
+      "usage": "?kick <@mention> <reason>"
+    }, {
+      "name": "mute",
+      "category": "basic",
+      "description": "Add the code on website with the help of this command.",
+      "permissions": ["MANAGE_GUILD", "MANAGE_MESSAGES", "MANAGE_PP"],
+      "aliases": ["mute"],
+      "usage": "?mute <@mention> <reason>"
+    }]
+  }
+}
