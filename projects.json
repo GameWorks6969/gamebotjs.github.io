@@ -4,9 +4,29 @@
     "url": "https://github.com/AstolfoDev/Astolfo-Caffeine",
     "description": "A games and finance bot with MongoDB integration built in Java using the JDA Discord API wrapper. Currently under development."
   },
-  "gg": {
-    "title": "AstolfoDev/Astolfo-Caffeine",
-    "url": "https://github.com/AstolfoDev/Astolfo-Caffeine",
-    "description": "A games and finance bot with MongoDB integration built in Java using the JDA Discord API wrapper. Currently under development."
+
+  "ASON": {
+    "title": "AstolfoDev/ASON",
+    "url": "https://github.com/AstolfoDev/ASON",
+    "description": "A Java JSON parsing alternative to Google's GSON library, this project is currently under active development, any support and feedback can be directed towards my <a href=\"https://discord.com/invite/4mFeX7V\" class=\"link\">Discord</a> server."
+  },
+
+  "AstolfoProfiles": {
+    "title": "@AstOwOlfo/AstolfoProfiles",
+    "url": "https://profile.astolfo.tech/",
+    "description": "An online web profile for each Astolfo Caffeine user, featuring their stats and other information, powered by AstolfoAPI."
+
+  },
+
+  "AstolfoEconomy": {
+    "title": "@AstOwOlfo/AstolfoEconomy",
+    "url": "https://repl.it/@AstOwOlfo/AstolfoEconomy",
+    "description": "A Minecraft economy core built with MongoDB database integration to store player information. Featuring a banking system and a taxation system."
+  },
+  
+  "AstolfoBridges": {
+    "title": "AstolfoDev/AstolfoBridges",
+    "url": "https://github.com/AstolfoDev/AstolfoBridges",
+    "description": "A bridge duels plugin made for Spigot 1.8.8, inspired by Hypixel's \"The Bridge\" gamemode. Not recommended for production use without making adjustments."
   }
 }
