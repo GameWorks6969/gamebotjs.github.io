@@ -3,16 +3,14 @@
     <head>
       <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-         <link rel="stylesheet" href="/index.css">        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">     
         <link rel="stylesheet" href="/commands.css">
-        <title>GameBot! | Cmds</title>   
+        <link rel="stylesheet" href="/index.css">
+        <title>GameBot | Commands!</title>   
     </head>
 
     <body>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-color">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-color">
     <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#ntoggle" aria-controls="ntoggle" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -27,12 +25,12 @@
                     <a class="nav-link" href="https://discord.com/oauth2/authorize?client_id=785573425253974066&permissions=4294967287&scope=bot">
                     Invite</a>
                 </li>
-              <li class="nav-item">
+                <li class="nav-item">
                     <a class="nav-link" href="https://gamebotjs.github.io/commands.html">
                     Commands</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://gamebotjs.github.io">
+                    <a class="nav-link" href="https://gamebotjs.github.io/music.html">
                     Music</a>
                 </li>
                 <li class="nav-item">
@@ -50,31 +48,54 @@
         </div>
     </div>
 </nav>
-      <div class="d-flex justify-content-center command_head">
-      <h1> Bot Commands!</h1>
+
+  <div class="container px-lg-5" id="commands_menu">
+      <div class="row">
+  <div class="col-sm-3" id="category">
+    <div class="list-group" id="myList" role="tablist">
+  <% Object.keys(commands).forEach((category, i) => { %>
+      <a class="list-group-item list-group-item-action <%= i==0 ? 'active' : '' %>"  data-bs-toggle="list" href="#<%= category %>" role="tab" aria-controls="<%= category %>"><%= category %></a>
+    <% }) %>
+    </div>
+  </div>
+  <div class="col-sm-9">
+    <div class="tab-content">
+  <% Object.keys(commands).forEach((category, k) => { %>
+      <div class="tab-pane fade show <%= k==0 ? 'active' : '' %>" id="<%= category %>" role="tabpanel" aria-labelledby="list-home-list">
+
+      <div class="accordion" id="acc_<%= category %>">
+  <% commands[category].forEach((cmd, i) => { %>
+    <div class="accordion-item">
+    <h2 class="accordion-header" id="h_<%= cmd.name %>">
+      <button class="accordion-button <%= i==0 ? '' : 'collapsed' %>" type="button" data-bs-toggle="collapse" data-bs-target="#c_<%= cmd.name %>" aria-expanded="<%= i==0 ? 'true' : 'false' %>" aria-controls="<%= cmd.name %>">
+        <%= cmd.name %>
+      </button>
+    </h2>
+    <div id="c_<%= cmd.name %>" class="accordion-collapse collapse <%= i==0 ? 'show' : ''%>" aria-labelledby="h_<%= cmd.name %>" data-bs-parent="#acc_<%= category %>">
+      <div class="accordion-body">
+      <code>Description : </code><%= cmd.description %> <br>
+      <code>Permissions : </code><% cmd.permissions.forEach(p => { %>
+      <kbd><%= p %></kbd>
+      <% }) %><br>
+      <code>Aliases : </code><% cmd.aliases.forEach(a => { %>
+      <small class="text-muted">[?<%= a %>]</small>
+      <% }) %><br>
+      <code>Usage : </code><small><kbd><%= cmd.usage %></kbd></small><br>
       </div>
-      <center>
-      <!-- Command Menu -->
-      <div>
-            <h1>Moderation!</h1>
-            <h3>All the admin/moderation commands can found in discord by '$!help admin' !</h3>
-            <p>Ban/Unban/Kick/Warn - $!ban @user | The unban does not work it will be fixed! | $!kick @user | $!warn @user [reason]</p>
-            <p>Say/DMuser/Nick - $!say [channel_name] [text] | $!dm @user [text] | $!nick @user [text]</p>
-            <p>Giveaway/Report - $!giveaway [time[s/m/h/d]] [max_winners] [price] | $!report @user [reason]</p>
-      </div>
-          <br>
-          <br>
-        <div>
-            <h1>Economy!</h1>
-            <h3>All the economy commands can found in discord by '$!help eco' !</h3>
-            <p>Daily/Buy/Work $!daily | $!buy worker [amount] | $!work</p>
-            <p>Balance/Leaderboards/Pay $!bal | $!lb |$!pay@user</p>
-      </div>
-          <br>
-          <br>
-        <h1>Imma add the other stuf later lol</h1>
+    </div>
+  </div>
+ <% }) %>
+</div>
+      
         
- 
-     </center>
+      </div>
+    <% }) %>
+    </div>
+  </div>
+</div>
+</div>
+     
+
+
     </body>
 </html>
